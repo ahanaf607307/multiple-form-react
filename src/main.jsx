@@ -6,6 +6,8 @@ import Home from './Home'
 import SimpleForm from './Components/Form/SimpleForm'
 import StateForm from './Components/Form/StateForm'
 import RefForm from './Components/Form/RefForm'
+import CustomHookForm from './Components/Form/CustomHookForm'
+import Grand from './Components/Grand/Grand'
 
 
 
@@ -25,6 +27,14 @@ element: <StateForm/>
     {
 path:'/refForm',
 element: <RefForm/>
+    },
+    {
+path:'/hookForm',
+element: <CustomHookForm/>
+    },
+    {
+path:'/grand',
+element: <Grand/>
     },
    ]
   },
