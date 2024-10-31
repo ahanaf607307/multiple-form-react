@@ -8,8 +8,13 @@ import StateForm from './Components/Form/StateForm'
 import RefForm from './Components/Form/RefForm'
 import CustomHookForm from './Components/Form/CustomHookForm'
 import Grand from './Components/Grand/Grand'
+import Mat from './Components/Mat/Mat'
+import Cat from './Components/Cat/Cat'
+import Fat from './Components/Fat/Fat'
+import FatTwo from './Components/Fat/FatTwo'
 
-
+import { UserProvider } from './Components/ContextApi/UserContext';
+import ContextApiUse from './Components/ContextApi/ContextApiUse'
 
 const router = createBrowserRouter([
   {
@@ -33,8 +38,32 @@ path:'/hookForm',
 element: <CustomHookForm/>
     },
     {
+path:'/contextApi',
+element: <ContextApiUse/>
+    },
+    {
 path:'/grand',
-element: <Grand/>
+element: <Grand/>,
+children: [
+  {
+    path:'mat',
+    element: <Mat/>
+  },
+  {
+    path:'cat',
+    element:<Cat/>
+  },
+  {
+    path:'fat',
+    element:<Fat/> ,
+    children: [
+      {
+        path:'fatTwo',
+        element:<FatTwo/>
+      }
+    ]
+  }
+]
     },
    ]
   },
@@ -45,6 +74,8 @@ element: <Grand/>
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <RouterProvider router={router} />
+  <UserProvider>
+    <RouterProvider router={router} />
+  </UserProvider>
 </React.StrictMode>
 )

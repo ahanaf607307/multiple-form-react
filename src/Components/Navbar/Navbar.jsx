@@ -17,6 +17,7 @@ function Navbar() {
       <NavLink to='/refForm'>Ref Form</NavLink>
       <NavLink to='/hookForm'>Hook Form</NavLink>
       <NavLink to='/grand'>Grand</NavLink>
+      <NavLink to='/contextApi'>contextApi</NavLink>
     </ul>
   </div>
 </div>
